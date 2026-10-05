@@ -1,0 +1,376 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AICFA — AI for Digital Financial Assets</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at 50% 0%, #151515 0%, #080808 42%, #030303 100%);
+      color: #f5f5f5;
+      font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: auto;
+    }
+
+    header {
+      padding: 28px 0;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: .28em;
+    }
+
+    .nav-status {
+      font-size: 11px;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: #666;
+    }
+
+    .hero {
+      min-height: 680px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 0;
+    }
+
+    .hero-inner {
+      max-width: 900px;
+    }
+
+    .eyebrow {
+      margin-bottom: 28px;
+      font-size: 12px;
+      letter-spacing: .3em;
+      text-transform: uppercase;
+      color: #777;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(58px, 11vw, 128px);
+      line-height: .88;
+      letter-spacing: -.075em;
+      font-weight: 750;
+    }
+
+    .hero-title {
+      background: linear-gradient(180deg, #fff 0%, #8d8d8d 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .subtitle {
+      max-width: 700px;
+      margin: 38px auto 0;
+      font-size: clamp(18px, 2.5vw, 25px);
+      line-height: 1.55;
+      color: #a0a0a0;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 42px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      padding: 13px 22px;
+      border: 1px solid #292929;
+      border-radius: 999px;
+      font-size: 13px;
+      letter-spacing: .05em;
+      color: #aaa;
+      background: rgba(255,255,255,.025);
+    }
+
+    .button.disabled {
+      opacity: .45;
+      cursor: default;
+    }
+
+    .section {
+      padding: 100px 0;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+
+    .section-label {
+      margin-bottom: 35px;
+      font-size: 11px;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: #555;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .card {
+      min-height: 210px;
+      padding: 26px;
+      border: 1px solid #181818;
+      border-radius: 18px;
+      background: linear-gradient(
+        145deg,
+        rgba(255,255,255,.035),
+        rgba(255,255,255,.008)
+      );
+    }
+
+    .card-number {
+      font-size: 11px;
+      color: #555;
+      letter-spacing: .15em;
+    }
+
+    .card h2 {
+      margin: 55px 0 12px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .card p {
+      margin: 0;
+      color: #707070;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .statement {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .statement h2 {
+      margin: 0;
+      font-size: clamp(30px, 5vw, 52px);
+      line-height: 1.15;
+      letter-spacing: -.04em;
+    }
+
+    .statement p {
+      margin-top: 28px;
+      color: #777;
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    footer {
+      padding: 30px 0;
+      border-top: 1px solid rgba(255,255,255,.06);
+      color: #444;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    @media (max-width: 800px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero {
+        min-height: 600px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: min(100% - 28px, 1120px);
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        min-height: 170px;
+      }
+
+      .card h2 {
+        margin-top: 35px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="logo">AICFA</div>
+    <div class="nav-status">Independent Research</div>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero">
+    <div class="hero-inner">
+
+      <div class="eyebrow">
+        AI for Digital Financial Assets
+      </div>
+
+      <h1>
+        <span class="hero-title">AICFA</span>
+      </h1>
+
+      <div class="subtitle">
+        An independent intelligence system for structured
+        analysis of digital financial markets.
+      </div>
+
+      <div class="buttons">
+        <div class="button disabled">Open AICFA — Coming Soon</div>
+        <div class="button">Explore System</div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="section" id="system">
+    <div class="container">
+
+      <div class="section-label">
+        The System
+      </div>
+
+      <div class="grid">
+
+        <div class="card">
+          <div class="card-number">01</div>
+          <h2>Market Intelligence</h2>
+          <p>
+            Structured market representation across multiple
+            timeframes and market conditions.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-number">02</div>
+          <h2>Smart Money</h2>
+          <p>
+            Market structure, liquidity, BOS, CHoCH, MSS,
+            order blocks and fair value gaps.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-number">03</div>
+          <h2>Autonomous Scanner</h2>
+          <p>
+            Continuous market observation designed to find
+            setups — or remain silent when evidence is insufficient.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-number">04</div>
+          <h2>Historical Analysis</h2>
+          <p>
+            Historical outcomes, validation and experience
+            become part of the analytical process.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container">
+
+      <div class="statement">
+
+        <h2>
+          No signal is better<br>
+          than a fabricated one.
+        </h2>
+
+        <p>
+          AICFA is being designed as an independent analytical
+          system rather than a simple interface around another
+          intelligence model.
+          <br><br>
+          The system can return LONG, SHORT, WAIT or NO TRADE —
+          depending on the available evidence and market state.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+
+<footer>
+  <div class="container footer-inner">
+    <div>AICFA by VALION E.L.</div>
+    <div>Research &amp; Development · 2026</div>
+  </div>
+</footer>
+
+</body>
+</html>
+```
