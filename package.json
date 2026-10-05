@@ -1,8 +1,16 @@
 {
   "name": "aicfa-web",
-  "private": true,
   "version": "1.0.0",
+  "private": true,
+  "description": "AICFA public website",
   "scripts": {
-    "build": "mkdir -p dist && cp index.html style.css dist/"
+    "build": "rm -rf dist && mkdir -p dist && cp index.html style.css dist/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nyxtryp/aicfa-web.git"
+  },
+  "engines": {
+    "node": ">=20"
   }
 }
