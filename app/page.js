@@ -59,7 +59,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer>
+      <footer className={styles.footer}>
         <div className={styles.container + " " + styles.footerInner}>
           <span>AICFA</span>
           <span>Research &amp; Development · 2026</span>
