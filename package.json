@@ -2,9 +2,13 @@
   "name": "aicfa-web",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "description": "AICFA public website",
   "scripts": {
-    "build": "rm -rf dist && mkdir -p dist && cp index.html style.css dist/"
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "vite": "^7.1.7"
   },
   "repository": {
     "type": "git",
